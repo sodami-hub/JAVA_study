@@ -2,6 +2,11 @@ package ch06;
 
 //Example15
 public class MemberService {
+
+    public MemberService() {
+
+    }
+
     boolean login(String id, String password) {
         if(id.equals("hong") && password.equals("12345")) {
             return true;

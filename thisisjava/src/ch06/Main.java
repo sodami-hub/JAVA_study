@@ -4,20 +4,22 @@ public class Main {
     public static void main(String[] args) {
 
         //Example15-확인
-//        MemberService memberService = new MemberService();
-//        boolean result = memberService.login("hong","12345");
-//        if(result) {
-//            System.out.println("log in successful.");
-//        } else {
-//            System.out.println("login failed.");
-//        }
+        System.out.println("--------- Ex15-------------------");
+        MemberService memberService = new MemberService();
+        boolean result = memberService.login("hong","12345");
+        if(result) {
+            System.out.println("log in successful.");
+        } else {
+            System.out.println("login failed.");
+        }
 
+        System.out.println("\n--------- Ex16,17-------------------");
         //Example16 - 확인
-//        Printer print = new Printer();
-//        print.println(10);
-//        print.println(true);
-//        print.println(3.15);
-//        print.println("홍길동");
+        Printer print = new Printer();
+        print.println(10);
+        print.println(true);
+        print.println(3.15);
+        print.println("홍길동");
 
         //Example17 - 확인
 //        Printer.println(10);
@@ -25,6 +27,7 @@ public class Main {
 //        Printer.println(3.14);
 //        Printer.println("hong");
 
+        System.out.println("\n--------- Ex18-------------------");
         //Example18 - 확인
         ShopService obj1 = ShopService.getInstance();
         ShopService obj2 = ShopService.getInstance();
