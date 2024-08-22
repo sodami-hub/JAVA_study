@@ -4,7 +4,6 @@ package ch01;
 public class Q8 {
 
     static int sumof(int a, int b) {
-        int sum=0;
 
         int n = Math.abs(a-b);
         if(n==1) {
