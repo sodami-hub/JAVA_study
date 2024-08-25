@@ -1,6 +1,5 @@
 package ch02_basicDataStructure.array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 // 기수 변환 과정을 자세히 나타내는 프로그램
