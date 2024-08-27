@@ -3,7 +3,7 @@ package ch03_searchAlgorithm;
 import java.util.Scanner;
 
 //이진 검색 과정 자세히 표현
-public class Q4 {
+public class Q04 {
 
     public static void binarySearch(int[] arr, int start, int end, int key) {
         System.out.print("   |");
@@ -24,7 +24,7 @@ public class Q4 {
             int mid = (start + end) / 2;
             for(int i = initStart; i <= initEnd; i++) {
                 if(i>=start && i<=end) {
-                    if(start == end) {
+                    if(start == end || start == mid || end == mid) {
                         System.out.print("  + ");
                         break;
                     }
