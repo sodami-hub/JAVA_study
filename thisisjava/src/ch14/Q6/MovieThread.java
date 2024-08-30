@@ -6,14 +6,10 @@ public class MovieThread extends Thread {
         while (true) {
             System.out.println("MovieThread");
 
-            if(this.isInterrupted()) {
+            if (this.isInterrupted()) {
                 System.out.println("interrupted");
                 break;
             }
         }
-
-
-
-
     }
 }
