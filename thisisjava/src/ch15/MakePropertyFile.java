@@ -51,6 +51,7 @@ public class MakePropertyFile {
         System.out.println("Key3 포함여부 =>> " + properties.containsKey("KEY3"));
         System.out.println("키값2 포함여부 =>> " + properties.containsValue("키값2"));
         System.out.println("Result =>> " + msg);
+
     }
 
 }
