@@ -45,7 +45,7 @@ public class ShakerSort {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,3,9,4,7,8,6};
+        int[] arr = {1,3,9,4,7,8,6,54,246,12566,323,34,2667,2,4667,2,89,56734,25656,132,1,4686};
         shakerSort(arr,arr.length);
     }
 }

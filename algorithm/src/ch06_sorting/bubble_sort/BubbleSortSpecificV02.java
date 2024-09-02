@@ -18,7 +18,6 @@ public class BubbleSortSpecificV02 {
         for (int i = 0; i < n - 1; i++) {
             System.out.println("패스 : "+ (i+1));
             change = 0;
-            System.out.println("버블정렬 ver02 - 상세 보이기");
             for (int j = 0 ; j < n - i - 1; j++) {
                 compare++;
                 for(int k = 0; k <= j-1 ; k++) {
