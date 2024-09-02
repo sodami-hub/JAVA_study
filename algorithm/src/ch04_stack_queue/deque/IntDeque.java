@@ -1,4 +1,4 @@
-package ch04.deque;
+package ch04_stack_queue.deque;
 
 
 //Q7 - deque 양방향 대기열

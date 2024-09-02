@@ -1,4 +1,4 @@
-package ch04;
+package ch04_stack_queue;
 
 public class Example05 {
     public static void main(String[] args) {

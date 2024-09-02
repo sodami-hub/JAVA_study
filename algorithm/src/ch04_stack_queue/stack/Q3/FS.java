@@ -1,4 +1,4 @@
-package ch04.stack.Q3;
+package ch04_stack_queue.stack.Q3;
 
 public class FS {
     int fPtr;

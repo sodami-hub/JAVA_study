@@ -1,6 +1,6 @@
-package ch04.deque;
+package ch04_stack_queue.deque;
 
-import ch04.queue.int_circle_queue.IntCircleQueue;
+import ch04_stack_queue.queue.int_circle_queue.IntCircleQueue;
 
 import java.util.Scanner;
 

@@ -1,6 +1,4 @@
-package ch04.queue.int_circle_queue;
-
-import java.net.StandardSocketOptions;
+package ch04_stack_queue.queue.int_circle_queue;
 
 
 // 원형 큐 만들기 + Q5

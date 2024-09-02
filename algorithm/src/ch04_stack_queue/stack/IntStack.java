@@ -1,4 +1,4 @@
-package ch04.stack;
+package ch04_stack_queue.stack;
 
 public class IntStack {
     private int[] stack;

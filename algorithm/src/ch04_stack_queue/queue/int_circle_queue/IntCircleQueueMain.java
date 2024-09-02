@@ -1,4 +1,4 @@
-package ch04.queue.int_circle_queue;
+package ch04_stack_queue.queue.int_circle_queue;
 
 import java.util.Scanner;
 

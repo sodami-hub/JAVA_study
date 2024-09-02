@@ -1,4 +1,4 @@
-package ch04.stack;
+package ch04_stack_queue.stack;
 
 //ch04.Q02
 public class GenStack<E> {

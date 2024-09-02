@@ -1,4 +1,4 @@
-package ch04;
+package ch04_stack_queue;
 
 import java.util.Scanner;
 
