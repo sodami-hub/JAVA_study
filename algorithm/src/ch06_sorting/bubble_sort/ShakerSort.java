@@ -5,13 +5,39 @@ import java.util.Arrays;
 //양방향 버블 소트 // shaker sort or cocktail sort
 //홀수 번째 패스는 작은 요소를 앞으로(뒤에서 앞으로)
 //짝수 번째 패스는 큰 요소를 뒤로(앞에서 뒤로)
+// => 암튼 이런식으로 만들어봄
 public class ShakerSort {
     public static void shakerSort(int[] arr, int n) {
         int start = 0;
-        int end = n;
-        int exchange;
+        int end = n-1;
+
+        int left = 0;
+        int right = n-1;
+
+        int count = 0;
+
+        while(left < right) {
+            System.out.println("패스 : " + (count+1));
+            for(int i = left; i <end; i++) {
+                if(arr[i] > arr[i+1]) {
+                    swap(arr, i, i+1);
+                    right = i;
+                }
+            }
+
+            count++;
+            System.out.println("패스 : " + (count+1));
+            for(int i = right; i > start; i--) {
+                if(arr[i] < arr[i-1]) {
+                    swap(arr, i, i-1);
+                    left = i;
+                }
+            }
+            count++;
+        }
 
 
+        /*
         for (int i = start; i < end-1; i++) {
             System.out.println("패스 : " + (i+1));
             exchange = 0;
@@ -34,6 +60,7 @@ public class ShakerSort {
             System.out.println(Arrays.toString(arr));
             if(exchange==0) {break;}
         }
+        */
     }
 
 
