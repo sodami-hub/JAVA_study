@@ -10,5 +10,10 @@ public class Main {
         SimpleInsertionSort sis = new SimpleInsertionSort();
         sis.simpleInsertionSort(arr01, arr01.length);
         System.out.println("simple insert sort : "  + Arrays.toString(arr01));
+
+        //삽입 정렬 상세 동작
+        int[] arr02 = {6,4,8,5,2,9,7};
+        sis.viewInsertionSort(arr02, arr02.length);
+
     }
 }
