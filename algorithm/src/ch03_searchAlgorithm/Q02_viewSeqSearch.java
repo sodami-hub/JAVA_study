@@ -3,8 +3,8 @@ package ch03_searchAlgorithm;
 import java.util.Scanner;
 
 // 선형 검색의 스캐닝 과정을 자세히 보여주기.
-public class Q02 {
-    public static void seqSearch(int[] arr, int len, int key) {
+public class Q02_viewSeqSearch {
+    public static void viewSeqSearch(int[] arr, int len, int key) {
         System.out.print("   |");
         for (int i = 0; i < len; i++) {
             System.out.printf("%3d",i);
@@ -71,7 +71,7 @@ public class Q02 {
         System.out.print("찾을 값 > ");
         int key = sc.nextInt();
 
-        seqSearch(arr, arr.length, key);
+        viewSeqSearch(arr, arr.length, key);
 
     }
 

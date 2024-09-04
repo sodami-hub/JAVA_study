@@ -3,7 +3,7 @@ package ch03_searchAlgorithm;
 import java.util.Arrays;
 
 // 이진 탐색 에서 같은 크기의 값이 나란히 있을 때 가장 앞쪽에 있는 요소를 반환하도록 한다.
-public class Q05 {
+public class Q05_BinarySearch02 {
 
     static int binSearchX(int[] arr, int n, int key) {
         int index = -1;

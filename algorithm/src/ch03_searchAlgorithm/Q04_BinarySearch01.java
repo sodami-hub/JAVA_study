@@ -3,7 +3,7 @@ package ch03_searchAlgorithm;
 import java.util.Scanner;
 
 //이진 검색 과정 자세히 표현
-public class Q04 {
+public class Q04_BinarySearch01 {
 
     public static void binarySearch(int[] arr, int start, int end, int key) {
         System.out.print("   |");
