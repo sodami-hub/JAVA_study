@@ -1,5 +1,7 @@
 package ch06_sorting.quick_sort;
 
+import ch04_stack_queue.stack.IntStack;
+
 public class QuickSort {
     public void swap(int[] arr, int left, int right) {
         int temp = arr[left];
@@ -27,6 +29,45 @@ public class QuickSort {
         }
         if(left<end) {
             quickSortV01(arr, left, end);
+        }
+    }
+
+    public void quickSortUseStack(int[] arr, int start, int end) {
+        IntStack lStack = new IntStack(end-start+1);
+        IntStack rStack = new IntStack(end-start+1);
+
+        lStack.push(start);
+        rStack.push(end);
+
+        int left;
+        int right;
+
+        while(lStack.isEmpty()==false) {
+            left = start = lStack.pop();
+            right = end = rStack.pop();
+
+            int pivot = arr[(left+right)/2];
+
+            while(arr[left]<pivot) {
+                left++;
+            }
+
+            while(arr[right]>pivot) {
+                right--;
+            }
+
+            if(left<=right) {
+                swap(arr, left++, right--);
+            }
+
+            if(start<right) {
+                lStack.push(start);
+                rStack.push(right);
+            }
+            if(left<end) {
+                lStack.push(left);
+                rStack.push(end);
+            }
         }
     }
 
