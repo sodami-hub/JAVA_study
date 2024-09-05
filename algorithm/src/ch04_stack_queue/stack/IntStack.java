@@ -29,21 +29,21 @@ public class IntStack {
         }
     }
 
-    public int Pop() throws EmptyStackException {
+    public int pop() throws EmptyStackException {
         if(ptr <= 0) {
             throw new EmptyStackException();
         }
         return stack[--ptr];
     }
 
-    public void Push(int data) throws OverflowStackException {
+    public void push(int data) throws OverflowStackException {
         if(ptr >= capacity) {
             throw new OverflowStackException();
         }
         stack[ptr++] = data;
     }
 
-    public int Peak() throws EmptyStackException {
+    public int peek() throws EmptyStackException {
         if(ptr <= 0) {
             throw new EmptyStackException();
         }

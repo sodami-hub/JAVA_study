@@ -20,14 +20,14 @@ public class Q1 {
                     System.out.print("데이터 : ");
                     data = sc.nextInt();
                     try {
-                        s.Push(data);
+                        s.push(data);
                     }catch(IntStack.OverflowStackException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 2:
                     try {
-                        data = s.Pop();
+                        data = s.pop();
                         System.out.println("팝한 데이터는 " + data + "입니다.");
                     } catch(IntStack.EmptyStackException e) {
                         System.out.println(e.getMessage());
@@ -35,7 +35,7 @@ public class Q1 {
                     break;
                 case 3:
                     try {
-                        data = s.Peak();
+                        data = s.peek();
                         System.out.println("픽한 데이터는 "+data+"입니다.");
                     } catch(IntStack.EmptyStackException e) {
                         System.out.println(e.getMessage());
