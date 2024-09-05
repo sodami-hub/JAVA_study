@@ -9,7 +9,28 @@ public class QuickSort {
         arr[right] = temp;
     }
 
+    public void insertionSort(int[] arr, int n) {
+        for(int i = 1; i<n;i++) {
+            int j;
+            int value = arr[i];
+            for (j = i - 1; j >= 0; j--) {
+                if (arr[j] > value) {
+                    arr[j + 1] = arr[j];
+                    arr[j] = value;
+                }
+            }
+        }
+    }
+
     public void quickSortV01(int[] arr, int start, int end) {
+
+        // Q13
+        if(start-end <10) {
+            System.out.println("요소수가 적어 삽입정렬 합니다.");
+            insertionSort(arr, arr.length);
+            return;
+        }
+
 
 
         System.out.println("QuickSort Basic");
@@ -37,6 +58,13 @@ public class QuickSort {
     }
 
     public void quickSortUseStack(int[] arr, int start, int end) {
+        // Q13
+        if(start-end <10) {
+            System.out.println("요소수가 적어 삽입정렬 합니다.");
+            insertionSort(arr, arr.length);
+            return;
+        }
+
         IntStack lStack = new IntStack(end-start+1);
         IntStack rStack = new IntStack(end-start+1);
 
