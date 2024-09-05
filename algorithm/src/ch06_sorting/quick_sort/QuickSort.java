@@ -10,6 +10,10 @@ public class QuickSort {
     }
 
     public void quickSortV01(int[] arr, int start, int end) {
+
+
+        System.out.println("QuickSort Basic");
+
         int pivot = arr[(start+end)/2];
         int left = start;
         int right = end;
@@ -36,6 +40,9 @@ public class QuickSort {
         IntStack lStack = new IntStack(end-start+1);
         IntStack rStack = new IntStack(end-start+1);
 
+        System.out.println("Push { start: "+start+" right: "+end+" }");
+        System.out.println("QuickSort Use Stack");
+
         lStack.push(start);
         rStack.push(end);
 
@@ -45,31 +52,38 @@ public class QuickSort {
         while(lStack.isEmpty()==false) {
             left = start = lStack.pop();
             right = end = rStack.pop();
-
+            System.out.print("Pop { start: arr["+start+"] ~ right: ["+end+"] } : ");
+            for(int i=start; i<=end; i++) {
+                System.out.print(arr[i]+" ");
+            }
+            System.out.println();
             int pivot = arr[(left+right)/2];
 
-            while(arr[left]<pivot) {
-                left++;
-            }
+            do {
+                while (arr[left] < pivot) {
+                    left++;
+                }
 
-            while(arr[right]>pivot) {
-                right--;
-            }
+                while (arr[right] > pivot) {
+                    right--;
+                }
 
-            if(left<=right) {
-                swap(arr, left++, right--);
-            }
+                if (left <= right) {
+                    swap(arr, left++, right--);
+                }
+            } while (left <= right);
 
             if(start<right) {
+                System.out.println("Push { start: "+start+" right: "+right+" }");
                 lStack.push(start);
                 rStack.push(right);
             }
             if(left<end) {
+                System.out.println("Push { start: "+left+" right: "+end+" }");
                 lStack.push(left);
                 rStack.push(end);
             }
         }
     }
-
 }
 
