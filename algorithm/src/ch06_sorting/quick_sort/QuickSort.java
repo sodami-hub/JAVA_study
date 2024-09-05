@@ -73,15 +73,32 @@ public class QuickSort {
                 }
             } while (left <= right);
 
-            if(start<right) {
-                System.out.println("Push { start: "+start+" right: "+right+" }");
-                lStack.push(start);
-                rStack.push(right);
-            }
-            if(left<end) {
-                System.out.println("Push { start: "+left+" right: "+end+" }");
-                lStack.push(left);
-                rStack.push(end);
+            //Q11 요소가 적은 그룹을 먼저 실행되도록 나중에 push(stack은 LIFO)한다.
+            int preFactor = right-start;
+            int postFactor = end-left;
+
+            if(postFactor<preFactor) {
+                if (start < right) {
+                    System.out.println("Push { start: " + start + " right: " + right + " }");
+                    lStack.push(start);
+                    rStack.push(right);
+                }
+                if (left < end) {
+                    System.out.println("Push { start: " + left + " right: " + end + " }");
+                    lStack.push(left);
+                    rStack.push(end);
+                }
+            } else {
+                if (left < end) {
+                    System.out.println("Push { start: " + left + " right: " + end + " }");
+                    lStack.push(left);
+                    rStack.push(end);
+                }
+                if (start < right) {
+                    System.out.println("Push { start: " + start + " right: " + right + " }");
+                    lStack.push(start);
+                    rStack.push(right);
+                }
             }
         }
     }
