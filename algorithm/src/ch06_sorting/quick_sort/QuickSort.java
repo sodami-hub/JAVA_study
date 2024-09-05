@@ -25,13 +25,11 @@ public class QuickSort {
     public void quickSortV01(int[] arr, int start, int end) {
 
         // Q13
-        if(start-end <10) {
+        if(end-start <10) {
             System.out.println("요소수가 적어 삽입정렬 합니다.");
             insertionSort(arr, arr.length);
             return;
         }
-
-
 
         System.out.println("QuickSort Basic");
 
@@ -59,7 +57,7 @@ public class QuickSort {
 
     public void quickSortUseStack(int[] arr, int start, int end) {
         // Q13
-        if(start-end <10) {
+        if(end-start <10) {
             System.out.println("요소수가 적어 삽입정렬 합니다.");
             insertionSort(arr, arr.length);
             return;
