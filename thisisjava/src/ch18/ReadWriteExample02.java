@@ -5,11 +5,11 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-// 이미지 파일을 inputstream으로 읽어서 outputstream으로 복사
+// 파일을 inputstream으로 읽어서 outputstream으로 복사 // 바이트 스트림
 public class ReadWriteExample02 {
     public static void main(String[] args) {
-        String src = "C:/Users/leejinhun/Downloads/test.jfif";
-        String dest = "C:/Users/leejinhun/Downloads/copy.jfif";
+        String src = "C:/Users/leejinhun/Downloads/test.txt";
+        String dest = "C:/Users/leejinhun/Downloads/test2.txt";
         try {
             byte[] buffer = new byte[1024];
 

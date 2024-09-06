@@ -2,7 +2,7 @@ package ch18;
 
 import java.io.*;
 
-// 보조 스트림 Writer, Reader 클래스를 사용해서 문자를 바로 쓰고 읽기.
+// 보조 스트림 Writer, Reader 클래스를 사용해서 바이트 스트림에서 문자를 바로 쓰고 읽기.
 public class CharacterConvertStreamExample {
 
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class CharacterConvertStreamExample {
     public static void write(String str) {
         try {
             OutputStream os = new FileOutputStream("C:/Users/leejinhun/Downloads/test.txt");
-            Writer writer = new OutputStreamWriter(os, "UTF-8");
+            Writer writer = new OutputStreamWriter(os, "UTF-8"); // 보조 스트림 - 바이트 스트림을 가져와서 문자 스트림 사용/ 문자를 바로 출력
 
             writer.write(str);
             writer.flush();
@@ -29,7 +29,7 @@ public class CharacterConvertStreamExample {
     public static String read() {
         try {
             InputStream is = new FileInputStream("C:/Users/leejinhun/Downloads/test.txt");
-            Reader reader = new InputStreamReader(is, "UTF-8");
+            Reader reader = new InputStreamReader(is, "UTF-8");  // 보조 스트림 - 바이트 스트림을 가져와서 문자 입력 스트림 사용 // 문자를 바로 입력
             char[] buffer = new char[100];
             int res = reader.read(buffer);
             reader.close();
