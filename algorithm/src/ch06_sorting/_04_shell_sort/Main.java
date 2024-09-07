@@ -1,4 +1,4 @@
-package ch06_sorting.shell_sort;
+package ch06_sorting._04_shell_sort;
 
 import java.util.Arrays;
 

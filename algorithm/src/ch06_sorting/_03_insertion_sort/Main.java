@@ -1,7 +1,6 @@
-package ch06_sorting.insertion_sort;
+package ch06_sorting._03_insertion_sort;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {

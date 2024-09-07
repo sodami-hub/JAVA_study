@@ -1,4 +1,4 @@
-package ch06_sorting.heap_sort;
+package ch06_sorting._07_heap_sort;
 
 import java.util.Arrays;
 

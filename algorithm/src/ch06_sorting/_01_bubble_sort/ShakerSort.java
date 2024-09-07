@@ -1,6 +1,4 @@
-package ch06_sorting.bubble_sort;
-
-import java.util.Arrays;
+package ch06_sorting._01_bubble_sort;
 
 //양방향 버블 소트 // shaker sort or cocktail sort
 //홀수 번째 패스는 작은 요소를 앞으로(뒤에서 앞으로)

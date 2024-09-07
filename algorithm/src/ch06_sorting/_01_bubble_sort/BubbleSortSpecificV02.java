@@ -1,23 +1,23 @@
-package ch06_sorting.bubble_sort;
+package ch06_sorting._01_bubble_sort;
 
 import java.util.Arrays;
 
-
-// Bubble Sort 상세히 보여줌 ... version 01
-public class BubbleSortSpecificV01 {
+public class BubbleSortSpecificV02 {
 
     static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
+        int temp = arr[i];
         arr[i] = arr[j];
-        arr[j] = tmp;
+        arr[j] = temp;
     }
 
     public static void bubbleSort(int[] arr, int n) {
         int compare = 0;
         int swapNum = 0;
-        System.out.println("버블정렬 ver01 - 상세 보이기");
+        int change;
+
         for (int i = 0; i < n - 1; i++) {
             System.out.println("패스 : "+ (i+1));
+            change = 0;
             for (int j = 0 ; j < n - i - 1; j++) {
                 compare++;
                 for(int k = 0; k <= j-1 ; k++) {
@@ -27,6 +27,7 @@ public class BubbleSortSpecificV01 {
                     swapNum++;
                     System.out.print(arr[j]+" + "+arr[j+1]+" ");
                     swap(arr, j, j + 1);
+                    change++;
                 } else {
                     System.out.print(arr[j]+" - "+arr[j+1]+" ");
                 }
@@ -37,9 +38,11 @@ public class BubbleSortSpecificV01 {
             }
             System.out.println(Arrays.toString(arr));
             System.out.println();
+            if(change == 0) {
+                break;
+            }
         }
         System.out.println("비교를 " + compare +"회 했습니다.");
         System.out.println("교환을 " + swapNum +"회 했습니다.");
     }
-
 }

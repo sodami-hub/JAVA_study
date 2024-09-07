@@ -1,4 +1,4 @@
-package ch06_sorting.selection_sort;
+package ch06_sorting._02_selection_sort;
 
 import java.util.Arrays;
 

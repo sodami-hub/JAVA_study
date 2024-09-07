@@ -1,4 +1,4 @@
-package ch06_sorting.merge_sort;
+package ch06_sorting._06_merge_sort;
 
 public class MergeSort {
     static int[] buff = new int[10];
@@ -15,7 +15,7 @@ public class MergeSort {
             mergesort(a, center+1, right);
 
             for(i = left; i<=center; i++) {
-                buff[p++] = a[i];               // 앞쪽 요소를 작업용 배열에 넣는다. i=1, p=1, r=1,k=0, j=0
+                buff[p++] = a[i];               // 앞쪽 요소를 작업용 배열에 넣는다.
             }
 
             while(i<=right && j<p) {

@@ -1,4 +1,4 @@
-package ch06_sorting.quick_sort;
+package ch06_sorting._05_quick_sort;
 
 import ch04_stack_queue.stack.IntStack;
 

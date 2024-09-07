@@ -1,16 +1,20 @@
-package ch06_sorting.bubble_sort;
+package ch06_sorting._01_bubble_sort;
 
+public class BubbleSortV02 {
 
-// bubble sort 배열의 앞에서부터 정렬을 시작함. version01
+    static void bubbleSortV02(int[] arr, int n) {
+        int exChange;
 
-public class BubbleSortV01 {
-
-    static void bubbleSortV01(int[] arr, int n) {
         for(int i = 0; i < n-1; i++) {
+            exChange = 0;
             for(int j = n-1; j > i; j++) {
                 if(arr[j] < arr[j-1]) {
                     swap(arr, j, j-1);
+                    exChange++;
                 }
+            }
+            if(exChange == 0) {
+                break;
             }
         }
     }

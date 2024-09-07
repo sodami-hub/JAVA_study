@@ -1,4 +1,4 @@
-package ch06_sorting.insertion_sort;
+package ch06_sorting._03_insertion_sort;
 
 // 단순 삽입 정렬
 public class SimpleInsertionSort {

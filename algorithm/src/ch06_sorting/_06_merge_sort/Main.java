@@ -1,4 +1,4 @@
-package ch06_sorting.merge_sort;
+package ch06_sorting._06_merge_sort;
 
 import java.util.Arrays;
 

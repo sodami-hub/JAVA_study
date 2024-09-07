@@ -1,7 +1,4 @@
-package ch06_sorting.shell_sort;
-
-import java.util.ArrayList;
-import java.util.Collection;
+package ch06_sorting._04_shell_sort;
 
 import static java.lang.System.currentTimeMillis;
 
