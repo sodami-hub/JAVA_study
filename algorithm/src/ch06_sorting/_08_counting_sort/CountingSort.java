@@ -28,8 +28,12 @@ public class CountingSort {
             f[arr[i]]--;
         }
         // 4. 배열 복사
+        System.arraycopy(temp, 0, arr, 0, n);
+
+        /* 위의 한줄 코드로 바꿈
         for(int i=0; i<n;i++){
             arr[i] = temp[i];
         }
+        */
     }
 }
