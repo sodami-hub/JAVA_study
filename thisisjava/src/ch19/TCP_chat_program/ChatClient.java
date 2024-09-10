@@ -23,7 +23,7 @@ public class ChatClient {
     }
 
     // 메소드 : json 받기
-    public void recieve() {
+    public void receive() {
         Thread thread = new Thread(()->{
            try {
                while(true) {
@@ -68,7 +68,7 @@ public class ChatClient {
             String json = jsonObject.toString();
             chatClient.send(json);
 
-            chatClient.recieve();
+            chatClient.receive();
 
             System.out.println("-------------------------------------");
             System.out.println("보낼 메시지를 입력하세요.");
