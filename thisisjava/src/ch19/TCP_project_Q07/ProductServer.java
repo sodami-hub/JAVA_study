@@ -21,7 +21,7 @@ public class ProductServer {
     ExecutorService threadPool = Executors.newFixedThreadPool(10);
     List<Product> products = new ArrayList<>();
 
-    // 서버에 접속하는 클라이언트의 객체
+    //======================  서버에 접속하는 클라이언트의 객체  =========================================
     public static class SocketClient {
         ProductServer productServer;
         Socket socket;
@@ -106,6 +106,8 @@ public class ProductServer {
         }
     }
 
+    // ==========================================================================================================
+
     public void sendToAll(SocketClient client) {
         JSONObject object = new JSONObject();
         object.put("data",products);
@@ -145,16 +147,28 @@ public class ProductServer {
         p.setPrice(object.getInt("price"));
         p.setStock(object.getInt("stock"));
         products.add(p);
-        JSONObject sendObject = new JSONObject();
-        sendObject.put("data",products);
+
     }
 
     public synchronized void updateProduct(JSONObject object) {
-
+        int len = products.size();
+        int no = object.getInt("no");
+        if(no > len) {
+            return;
+        } else {
+            products.get(no-1).setName(object.getString("name"));
+            products.get(no-1).setStock(object.getInt("stock"));
+            products.get(no-1).setPrice(object.getInt("price"));
+        }
     }
 
     public synchronized void removeProduct(int no) {
-
+        int len = products.size();
+        if(no>len) {
+            return;
+        } else {
+            products.remove(no-1);
+        }
     }
 
 

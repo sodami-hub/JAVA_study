@@ -35,6 +35,7 @@ public class ProductClient {
             if(products.length() == 0) {
                 return;
             } else {
+                System.out.println("[상품 목록]");
                 System.out.println("-----------------------------------------------------------------");
                 System.out.println("no  name       price     stock");
                 System.out.println("-----------------------------------------------------------------");
@@ -42,6 +43,7 @@ public class ProductClient {
                     JSONObject object = products.getJSONObject(i);
                     System.out.println(object.getInt("no") + "    " + object.getString("name") + "          " + object.getInt("price") + "        " + object.getInt("stock"));
                 }
+                System.out.println("-----------------------------------------------------------------");
             }
         }catch(IOException e) {
             System.out.println(e.getMessage());
@@ -90,16 +92,21 @@ public class ProductClient {
                 String sendData;
                 select = sc.nextInt();
 
+                int no;
+                String name;
+                int price;
+                int stock;
+
                 switch (select) {
                     case 1:
                         object.put("command", 1);
                         System.out.println("[상품생성]");
                         System.out.print("상품 이름 : ");
-                        String name = sc.next();
+                        name = sc.next();
                         System.out.print("상품 가격 : ");
-                        int price = sc.nextInt();
+                        price = sc.nextInt();
                         System.out.print("상품 재고 :");
-                        int stock = sc.nextInt();
+                        stock = sc.nextInt();
                         JSONObject newProduct = new JSONObject();
                         newProduct.put("name", name);
                         newProduct.put("price", price);
@@ -110,9 +117,32 @@ public class ProductClient {
                         break;
                     case 2:
                         object.put("command", 2);
+                        System.out.println("[상품 수정]");
+                        System.out.print("상품 번호");
+                        no = sc.nextInt();
+                        System.out.println("이름 변경");
+                        name = sc.next();
+                        System.out.println("가격 변경");
+                        price = sc.nextInt();
+                        System.out.println("재고 변경");
+                        stock = sc.nextInt();
+                        JSONObject updateProduct = new JSONObject();
+                        updateProduct.put("no",no);
+                        updateProduct.put("name",name);
+                        updateProduct.put("price",price);
+                        updateProduct.put("stock",stock);
+                        object.put("data",updateProduct);
+                        sendData = object.toString();
+                        client.send(sendData);
                         break;
                     case 3:
                         object.put("command", 3);
+                        System.out.println("[상품 삭제]");
+                        System.out.print("상품 번호 ");
+                        no = sc.nextInt();
+                        object.put("data", no);
+                        sendData = object.toString();
+                        client.send(sendData);
                         break;
                     case 4:
                         object.put("command", 4);
