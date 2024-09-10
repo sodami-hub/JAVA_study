@@ -140,7 +140,7 @@ public class ProductServer {
     public synchronized void addProduct(JSONObject object) {
         int len = products.size();
         Product p = new Product();
-        p.setNo(len);
+        p.setNo(len+1);
         p.setName(object.getString("name"));
         p.setPrice(object.getInt("price"));
         p.setStock(object.getInt("stock"));
