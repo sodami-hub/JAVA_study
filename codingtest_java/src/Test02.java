@@ -18,7 +18,7 @@ public class Test02 {
             }
         }
     };
-
+    // 나의 처음 풀이
     public static void sol01(int[] arr) {
         //Set 에 넣어서 중복값 제거
         HashSet<Integer> hs = new HashSet<>();
@@ -40,6 +40,7 @@ public class Test02 {
         }
     }
 
+    // 스트림을 이용한 풀이
     public static int[] sol02(int[] arr) {
         Integer[] temp = Arrays.stream(arr).distinct().boxed().toArray(Integer[]::new);
         Arrays.sort(temp, Collections.reverseOrder());
@@ -48,9 +49,25 @@ public class Test02 {
         return array;
     }
 
+    // TreeSet을 사용한 풀이
+    public static void sol03(int[] arr) {
+        TreeSet<Integer> ts = new TreeSet<>(Collections.reverseOrder());
+        for(int i = 0; i < arr.length; i++) {
+            ts.add(arr[i]);
+        }
+        int[] array = new int[ts.size()];
+        int i=0;
+        for (Integer t : ts) {
+            array[i] = t;
+            i++;
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
+
     public static void main(String[] args) {
         int[] arr = {2,1,1,3,2,5,4};
 
-        int[] array = sol02(arr);
+        sol03(arr);
     }
 }
