@@ -34,6 +34,20 @@ public class Test05 {
         return result;
     }
 
+    public static int[][] solution02(int[][] arr01, int[][] arr02) {
+        int row = arr01.length;
+        int col = arr01[0].length;
+        int[][] result = new int[row][col];
+        for (int i = 0; i<row; i++) {  // 행 고정
+            for(int j = 0; j<col; j++) {  // 열 고정
+                for(int k = 0; k<arr02.length; k++) { // 스캔
+                    result[i][j] += arr01[i][k] * arr02[k][j]; // arr01의 행을 고정하고 스캔, arr02의 열을 고정하고 스캔
+                }
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         int[][] arr01 = {{1, 4}, {3, 2}, {4, 1}};
         int[][] arr02 = {{3, 3}, {3, 3}};
@@ -51,5 +65,11 @@ public class Test05 {
             System.out.println(Arrays.toString(ints));
         }
 
+        System.out.println("\n==== second sol");
+        result = solution02(arr03,arr04);
+        for (int[] ints : result) {
+            System.out.println(Arrays.toString(ints));
+
+        }
     }
 }
