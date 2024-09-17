@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 public class Test06 {
-    public static double[] solution(int n, int[] stages) {
+    public static int[] solution(int n, int[] stages) {
         double[] fail = new double[n];
         int[] stopNum = new int[n];
         int outMember = 0;
@@ -52,7 +52,7 @@ public class Test06 {
 
     public static void main(String[] args) {
         int[] arr = {2,1,2,6,2,4,3,3};
-        double[] result = solution(5, arr);
+        int[] result = solution(5, arr);
         System.out.println(Arrays.toString(result));
     }
 }
