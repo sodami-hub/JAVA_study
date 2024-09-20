@@ -2,20 +2,37 @@ import java.util.Stack;
 
 public class Test10 {
     private static boolean check(String pat) {
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> sStack = new Stack<>();
+        Stack<Character> mStack = new Stack<>();
+        Stack<Character> lStack = new Stack<>();
         char ch;
         for (int i = 0; i < pat.length(); i++) {
             ch = pat.charAt(i);
             switch (ch) {
-                case '{', '[', '(':
-                    stack.push(ch);
+                case '(':
+                    sStack.push(ch);
                     break;
-                case '}', ']', ')':
-                    if (stack.isEmpty()) return false;
-                    stack.pop();
+                case '{':
+                    mStack.push(ch);
+                    break;
+                case '[':
+                    lStack.push(ch);
+                    break;
+                case ')':
+                    if (sStack.isEmpty()) return false;
+                    sStack.pop();
+                    break;
+                case '}':
+                    if (mStack.isEmpty()) return false;
+                    mStack.pop();
+                    break;
+                case ']':
+                    if (lStack.isEmpty()) return false;
+                    lStack.pop();
+                    break;
             }
         }
-        if (stack.isEmpty()) {
+        if ((sStack.isEmpty() && mStack.isEmpty()) && lStack.isEmpty()) {
             return true;
         } else {
             return false;
