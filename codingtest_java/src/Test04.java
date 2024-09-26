@@ -19,7 +19,6 @@ public class Test04 {
             for (int i = 0; i < answer.length; i++) {
                 if(count >= pat[k].length) {
                     count = 0;
-                    continue;
                 }
                 if(answer[i] == pat[k][count]) {
                     score++;

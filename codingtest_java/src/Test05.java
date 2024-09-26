@@ -7,24 +7,21 @@ import java.util.Arrays;
 
 public class Test05 {
 
-    public static int[][] solution(int[][] arr01, int[][] arr02) {
-        int x = arr01.length;
-        int y = arr01[0].length;
+    public static int[][] solution(int[][] arr1, int[][] arr2) {
+        int x = arr1.length;
+        int y = arr1[0].length;
 
         int[][] result = new int[x][y];
-        int value = 0;
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        int num01 = 0;
-        int num02 = 0;
+        int value;
+        int num01;
+        int num02;
 
-        for (i = 0; i < x * y; i++) {
+        for (int i = 0; i < x * y; i++) {
             value = 0;
-            for (j = 0; j < y; j++) {
-                num01 = arr01[i / y][j];
-                for (k = j; k <= j; k++) {
-                    num02 = arr02[k][i % y];
+            for (int j = 0; j < y; j++) {
+                num01 = arr1[i / y][j];
+                for (int k = j; k <= j; k++) {
+                    num02 = arr2[k][i % y];
                     value += num01 * num02;
                 }
             }
@@ -34,14 +31,14 @@ public class Test05 {
         return result;
     }
 
-    public static int[][] solution02(int[][] arr01, int[][] arr02) {
-        int row = arr01.length;
-        int col = arr01[0].length;
+    public static int[][] solution02(int[][] arr1, int[][] arr2) {
+        int row = arr1.length;
+        int col = arr1[0].length;
         int[][] result = new int[row][col];
         for (int i = 0; i<row; i++) {  // 행 고정
             for(int j = 0; j<col; j++) {  // 열 고정
-                for(int k = 0; k<arr02.length; k++) { // 스캔
-                    result[i][j] += arr01[i][k] * arr02[k][j]; // arr01의 행을 고정하고 스캔, arr02의 열을 고정하고 스캔
+                for(int k = 0; k<arr2.length; k++) { // 스캔
+                    result[i][j] += arr1[i][k] * arr2[k][j]; // arr01의 행을 고정하고 스캔, arr02의 열을 고정하고 스캔
                 }
             }
         }
