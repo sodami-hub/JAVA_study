@@ -1,16 +1,24 @@
-import java.util.Arrays;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.HashMap;
 
 public class Test19 {
     public static String solution(String[] participant, String[] completion) {
-        Set<String> set = Arrays.stream(participant).collect(Collectors.toSet());
+        HashMap<String,Integer> hs = new HashMap<>();
 
+        for (String s : participant) {
+            hs.put(s,hs.getOrDefault(s,0) +1);
+        }
+        System.out.println("hs = " + hs);
+        
         for (String s : completion) {
-            set.remove(s);
+            hs.put(s,hs.get(s)-1);
         }
 
-        return set.toString();
+        for (String s : hs.keySet()) {
+            if(hs.get(s) != 0) {
+                return s;
+            }
+        }
+        return null;
     }
 
     public static void main(String[] args) {
@@ -18,6 +26,11 @@ public class Test19 {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"kiki", "eden"};
         result = solution(participant,completion);
+        System.out.println("result = " + result);
+
+        String[] participant2 = {"mislav","stanko","mislav","ana"};
+        String[] completion2 = {"stanko","ana","mislav"};
+        result = solution(participant2,completion2);
         System.out.println("result = " + result);
     }
 
