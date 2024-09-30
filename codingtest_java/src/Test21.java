@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Test21 {
 
-
-
     public static String[] solution(String[] record) {
         String cmd ="";
         String uid= "";
@@ -15,7 +13,7 @@ public class Test21 {
         List<Integer> list;
 
         HashMap<String,String> uidAndNickMap = new HashMap<>();  // HashMap<uid, nick>
-        HashMap<String,List<Integer>> uidAndStrMap = new HashMap<>();
+        HashMap<String,List<Integer>> uidAndStrMap = new HashMap<>(); //HashMap<uid, 출력문 index>
 
         List<String> res = new ArrayList<>();
 
