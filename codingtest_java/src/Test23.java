@@ -13,7 +13,7 @@ public class Test23 {
         List<Integer> result = new ArrayList<>();
 
 
-        List<String> strList;
+        List<String> strList;  // 요걸 set으로 바꾸면 중복을 제거가능!
         // 해당 id가 신고한 id
         HashMap<String, List<String>> idForReported = new HashMap<>();
         for (String s : id_list) {
