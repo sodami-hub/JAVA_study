@@ -17,6 +17,9 @@ public class Test27 {
         }
 
         int targetPersonTotalIncome;
+        int targetPersonIncome;
+        int payToReferral;
+
         String targetPerson ="";
         int targetIndex;
 
@@ -25,12 +28,21 @@ public class Test27 {
             targetPersonTotalIncome = (amount[i]*100);
 
             while(!targetPerson.equals("-")) {
-                targetIndex = enrollIndex.get(targetPerson);
-                result[targetIndex] += (int)(targetPersonTotalIncome*0.9);
+                if(targetPersonTotalIncome < 10) {
+                    targetIndex = enrollIndex.get(targetPerson);
+                    result[targetIndex] += targetPersonTotalIncome;
 
-                targetPerson = enrollAndReferral.get(targetPerson);
-                targetPersonTotalIncome = (int)(targetPersonTotalIncome*0.1);
+                    break;
+                } else {
+                    payToReferral = (int)(targetPersonTotalIncome*0.1);
+                    targetPersonIncome = targetPersonTotalIncome-payToReferral;
 
+                    targetIndex = enrollIndex.get(targetPerson);
+                    result[targetIndex] += targetPersonIncome;
+
+                    targetPerson = enrollAndReferral.get(targetPerson);
+                    targetPersonTotalIncome = payToReferral;
+                }
             }
         }
 
